@@ -54,6 +54,7 @@ public struct Storage {
     )
         where Key: StorageKey
     {
+        logger.info("Setting storage key: \(key)")
         let key = ObjectIdentifier(Key.self)
         if let value = value {
             self.storage[key] = Value(value: value, onShutdown: onShutdown)
